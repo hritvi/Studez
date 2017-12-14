@@ -1,3 +1,10 @@
 body{
 	margin: 5px;
+	background-image: url("../images/login.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.error{
+	background-color: yellow;
+	color:red;
 }
