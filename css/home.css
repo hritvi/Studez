@@ -1,6 +1,135 @@
+html{box-sizing:border-box}
 body{
 	margin:5px;
 }
 .login{
 	float: right;
+}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url('../images/c1.jpg');
+    min-height: 100%;
+    width:auto;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+    background-image: url("../images/c2.jpg");
+    min-height: 400px;
+    width:auto;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+    background-image: url("../images/c4.png");
+    min-height: 400px;
+    width:auto;
+}
+
+.w3-display-middle{
+	position:absolute;
+	top:40%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+	font-size: 30px;
+	color:#1e653b;
+}
+
+.center{
+	text-align: center;
+}
+.g1{
+	background-image: url('../images/g1.jpg')
+}
+.grps{
+	height: 300px;
+	width:300px;
+	padding: 1vw;  
+}
+.pic_transform {
+     transition-duration: 0.5s;            
+     -webkit-transition-duration: 0.5s; 
+     -moz-transition-duration: 0.5s;    
+     -o-transition-duration: 0.5s;
+     overflow: hidden;
+     height: 0px;
+}
+.grps:hover .pic_transform {
+     height: 50px;
+}
+.text_display {
+     transform-origin: top;               
+     transition-duration: 0.5s;               
+     -webkit-transform-origin: top;       
+     -webkit-transition-duration: 0.5s;   
+     -moz-transform-origin: top;           
+     -moz-transition-duration: 0.5s;       
+     -o-transform-origin: top;    
+     -o-transition-duration: 0.5s;
+     font-size: 16px;
+     font-family: Arial;       
+     font-weight: normal;
+     text-align:center;
+     color: #FFF;       
+}
+.grps:hover .text_display {
+      background: rgba(0, 0, 0, 0.5);   
+      color: #fff;   
+      height:50px;   
+                      }
+.hover:hover{
+	 opacity:0.60;
+}
+
+.block{
+	padding-top: 64px;
+	padding-bottom: 64px;
+	background-color: #ffe6f7;
+}
+.foot{
+	padding-top: 64px;
+	padding-bottom: 64px;
+	background-color:#ff4dff59;
+}
+.items{
+	font-size:24px;
+	margin-top:16px;
+}
+.w3-white {color:#000;background-color:#e2e2c9}
+
+.navbar-brand{
+	color:#000066;
+}
+.icon-bar{
+	background-color: black;
+}
+.text{
+	padding-bottom:15px;
+}
+
+.wel{
+	padding-right: 2vw;
+	color: white;
+}
+.nav{
+	padding-top: 7px;
+}
+.about{
+	padding: 0 7vw;
 }
