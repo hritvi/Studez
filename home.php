@@ -3,6 +3,7 @@
    define('DB_USERNAME', 'root');
    define('DB_PASSWORD', 'Samdar');
    define('DB_DATABASE', 'studymanage');
+   $error="";
    $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       $myusername = mysqli_real_escape_string($db,$_POST['usr']);
@@ -11,7 +12,6 @@
       $sql = "SELECT * FROM login WHERE enroll = '$myusername' and passwd = '$mypassword'";
       $result = mysqli_query($db,$sql);
       $count = mysqli_num_rows($result);
-    
       if($count == 1) {
          header("location: php/homein.php");
       }else {
@@ -65,11 +65,9 @@
 
 <!-- Container (About Section) -->
 <div class="block">
-  <h3 class="center">ABOUT ME</h3>
-  <p class="center"><em>I love photography</em></p>
-  <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-    qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <h3 class="center">ABOUT US</h3>
+  <h3 class="center"><em>Study Shape Share</em></h3>
+  <h4 class="center about">It would give you online storage where you can keep photos, stories, designs, drawings, recordings, videos – anything in an organized way making it easy to find the notes at the time of exams.Your files can be reached from any smartphone, tablet, or computer. So wherever you go, your files follow.You can quickly invite others to view or download all the files you want–no email attachment needed.We connect you to a group of students sharing the same course under the same professor so the next time when he wants to share anything with the class he could share it in that group or even you can share anything in that group.</h4>
 </div>
 
 <!-- Second Parallax Image-->
@@ -80,10 +78,10 @@
 <div class="block">
 <h3 class="center">Here are some of the running groups</h3>
 <div class="center">
-<img src="images/c1.jpg" class="grps" alt="The mist over the mountains">
-<img src="images/c1.jpg" class="grps" alt="The mist over the mountains">
-<img src="images/c1.jpg" class="grps" alt="The mist over the mountains">
-<img src="images/c1.jpg" class="grps" alt="The mist over the mountains">
+<img src="images/g1.jpg" class="grps" alt="Electrodynamiocs and Optics" title="Electrodynamiocs and Optics">
+<img src="images/g2.jpeg" class="grps" alt="Mathematics" title="Mathematics">
+<img src="images/g3.jpg" class="grps" alt="Introduction to Electrical Engineering" title="Introduction to Electrical Engineering">
+<img src="images/g4.jpg" class="grps" alt="Introduction to Object Oriented Programming-Java" title="Introduction to Object Oriented Programming-Java">
 </div>
 </div>
 <!-- Third Parallax Image-->
@@ -106,7 +104,7 @@
 </div>
 <!--Footer-->
 <footer class="center foot">
-  <button class="btn-lg"><a href="#home"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a></button>
+  <a href="#home"><button class="btn-lg"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</button></a>
   <div class="items">
     <i class="fa fa-facebook-official"></i>
     <i class="fa fa-instagram hover"></i>

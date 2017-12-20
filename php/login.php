@@ -63,49 +63,6 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
-$lname=test_input($_POST["lname"]);
-$course2=test_input($_POST["course2"]);
-$p2=test_input($_POST["p2"]);
-$course3=test_input($_POST["course3"]);
-$p3=test_input($_POST["p3"]);
-$course4=test_input($_POST["course4"]);
-$p4=test_input($_POST["p4"]);
-$course5=test_input($_POST["course5"]);
-$p5=test_input($_POST["p5"]);
-
-//storing data
-$servername = "localhost";
-$username = "root";
-$password = "Samdar";
-$dbname = "studymanage";
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-
-$sql = "INSERT INTO info(Fname, Lname, Branch, Email, Enrollno , password,course1 ,proff1 ,course2 ,proff2 ,course3 ,proff3 ,course4 ,proff4 ,course5 ,proff5)
-VALUES ('$fname','$lname','$branch','$email','$enroll','$pass','$course1','$p1','$course2','$p2','$course3','$p3','$course4','$p4','$course5','$p5')";
-
-$sql2 = "INSERT INTO login(enroll , passwd) VALUES ('$enroll' , '$pass')";
-
-if (mysqli_query($conn, $sql)) {
-    echo "You are registered successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    echo "register again";
-}
-
-if (mysqli_query($conn, $sql2)) {
-    echo "You are LOOGED IN successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    echo "DO again";
-}
-
-mysqli_close($conn);
-}
 ?>
 <html>
 <head>
@@ -143,31 +100,31 @@ mysqli_close($conn);
     <li class="active"><a data-toggle="tab" href="#Step1">Step 1</a></li>
     <li><a data-toggle="tab" href="#Step2">Step 2</a></li>
     </ul><br>
-    <form method="post" action="">
+    <form method="post" action="register.php">
     <div class="tab-content">
 	<div id="Step1" class="tab-pane fade in active">
-		<input type=text placeholder="Enter First Name*" name="fname" class="form-control" >
+		<input type=text placeholder="Enter First Name*" name="fname" class="form-control" required>
 		<span class="error"> <?php echo $fnameErr;?></span><br>
 		<input type=text placeholder="Enter Last Name" name="lname" class="form-control"><br>
-		<select name="branch" class="form-control"  >
+		<select name="branch" class="form-control" required>
 			<option disabled selected>Select Branch*</option>
 			<option>Computer Science and Engineering</option>
 			<option>Electronics and Communication Engineering</option>
 			<option>Electrical Engineering</option>
 		</select><span class="error"> <?php echo $branchErr;?></span><br>
-		<input type="text" name="email" placeholder="Email-Id*" class="form-control" >
+		<input type="text" name="email" placeholder="Email-Id*" class="form-control" required>
 		<span class="error"> <?php echo $emailErr;?></span><br>
-		<input type="number" name="enroll" placeholder="Enrollment number*" class="form-control" >
+		<input type="number" name="enroll" placeholder="Enrollment number*" class="form-control"  required>
 		<span class="error"> <?php echo $enrollErr;?></span><br>
-		<input type="password" name="password" placeholder="Enter Password*" class="form-control" >
+		<input type="password" name="password" placeholder="Enter Password*" class="form-control"  required>
 		<span class="error"> <?php echo $passwordErr;?></span><br>
-		<input type="password" name="password" placeholder="Confirm Password*" class="form-control" ><br>
+		<input type="password" name="password" placeholder="Confirm Password*" class="form-control"  required><br>
 		<center><a data-toggle="tab" href="#Step2"><button class="btn btn-primary">
     Next<span class="glyphicon glyphicon-chevron-right"></span></button></a></center>
 	</div>
 	<div id="Step2" class="tab-pane fade">
-		<input type=text placeholder="Enter Course Name*" name="course1" class="form-control" >
-		<input type=text placeholder="Enter Proffesor's Name*" name="p1" class="form-control" ><br>
+		<input type=text placeholder="Enter Course Name*" name="course1" class="form-control"  required>
+		<input type=text placeholder="Enter Proffesor's Name*" name="p1" class="form-control"  required><br>
 		<input type=text placeholder="Enter Course Name" name="course2" class="form-control">
 		<input type=text placeholder="Enter Proffesor's Name" name="p2" class="form-control"><br>
 		<input type=text placeholder="Enter Course Name" name="course3" class="form-control">

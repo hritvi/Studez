@@ -54,14 +54,47 @@ body, html {
 .center{
 	text-align: center;
 }
-
+.g1{
+	background-image: url('../images/g1.jpg')
+}
 .grps{
 	height: 300px;
 	width:300px;
-	padding: 1vw;
+	padding: 1vw;  
 }
+.pic_transform {
+     transition-duration: 0.5s;            
+     -webkit-transition-duration: 0.5s; 
+     -moz-transition-duration: 0.5s;    
+     -o-transition-duration: 0.5s;
+     overflow: hidden;
+     height: 0px;
+}
+.grps:hover .pic_transform {
+     height: 50px;
+}
+.text_display {
+     transform-origin: top;               
+     transition-duration: 0.5s;               
+     -webkit-transform-origin: top;       
+     -webkit-transition-duration: 0.5s;   
+     -moz-transform-origin: top;           
+     -moz-transition-duration: 0.5s;       
+     -o-transform-origin: top;    
+     -o-transition-duration: 0.5s;
+     font-size: 16px;
+     font-family: Arial;       
+     font-weight: normal;
+     text-align:center;
+     color: #FFF;       
+}
+.grps:hover .text_display {
+      background: rgba(0, 0, 0, 0.5);   
+      color: #fff;   
+      height:50px;   
+                      }
 .hover:hover{
-	opacity:0.60;
+	 opacity:0.60;
 }
 
 .block{
@@ -72,7 +105,7 @@ body, html {
 .foot{
 	padding-top: 64px;
 	padding-bottom: 64px;
-	background-color: black;
+	background-color:#ff4dff59;
 }
 .items{
 	font-size:24px;
@@ -96,4 +129,7 @@ body, html {
 }
 .nav{
 	padding-top: 7px;
+}
+.about{
+	padding: 0 7vw;
 }
