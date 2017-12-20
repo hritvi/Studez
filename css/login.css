@@ -1,3 +1,20 @@
 body{
 	margin: 5px;
+	background-image: url("../images/login.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.error{
+	background-color: yellow;
+	color:red;
+}
+.navbar-brand{
+	color: white;
+	font-weight: bold;
+}
+.navbar-brand:hover{
+	color:#adf58b;
+}
+.nav{
+	padding-top: 3px;
 }
