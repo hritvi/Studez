@@ -40,12 +40,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>  
       </button>
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <a class="navbar-brand" href="#">Studez</a>
     </div>
     <div class="collapse navbar-collapse" id="nav">
     <span class="nav navbar-nav"><a href ="php/login.php"><button class="btn btn-danger"><span class="glyphicon glyphicon-education"></span>Register Now</button></a></span>
     <form action="" method="post" class="navbar-form navbar-right">
-      <input type=text placeholder="Enter enrollment no." name=usr class="form-control" required>
+      <input type=number placeholder="Enter enrollment no." name=usr class="form-control" required>
 	  <input type=password placeholder="Enter password" name=pwd class="form-control" required>
 	  <button class="btn btn-success"><span class="glyphicon glyphicon-log-in"></span> Sign In</button>
     <span style = "font-size:15px; color:#cc0000; margin-top:10px"><?php echo $error; ?></span>
@@ -59,7 +59,7 @@
 <!--First Parallax-->
 <div class="bgimg-1" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
-		MY WEBSITE LOGO
+		Studez....Making study easier!!
   </div>
 </div>
 
@@ -94,7 +94,7 @@
 <div class="col-sm-4"></div>
 <div class="col-sm-4">
   <form method="post" action="">
-  <input type=text placeholder="Enter enrollment no." name="usr" class="form-control" required><br>
+  <input type=number placeholder="Enter enrollment no." name="usr" class="form-control" required><br>
   <input type="password" name="pwd" placeholder="Enter password" class="form-control" required><br>
   <center><button type=submit class="btn-lg btn-primary">Sign In</button></center></form>
   <center><div><span style = "font-size:15px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div></center><br>
@@ -106,14 +106,14 @@
 <footer class="center foot">
   <a href="#home"><button class="btn-lg"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</button></a>
   <div class="items">
-    <i class="fa fa-facebook-official"></i>
+    <i class="fa fa-facebook-official hover"></i>
     <i class="fa fa-instagram hover"></i>
     <i class="fa fa-snapchat hover"></i>
     <i class="fa fa-pinterest-p hover"></i>
     <i class="fa fa-twitter hover"></i>
     <i class="fa fa-linkedin hover"></i>
   </div>
-  <h4>&copy; 2017 by WebsiteName.</h4>
+  <h4>&copy; 2017 by Studez.</h4>
 </footer>
 
 <script>

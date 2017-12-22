@@ -13,9 +13,10 @@
       $count = mysqli_num_rows($result);
     
       if($count == 1) {
-         header("location: home1.html");
+         header("location: homein.php");
       }else {
-         echo "Your Login Name or Password is invalid";
+         echo "Your Login Name or Password is invalid<BR>";
+         echo "<a href=login.php><button>Try Again</button></a>";
       }
    }
 ?>

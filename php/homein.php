@@ -19,7 +19,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
       </button>
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <a class="navbar-brand" href="#">Studez</a>
     </div>
     <div class="collapse navbar-collapse" id="nav">
     <ul class="nav navbar-nav">
@@ -29,6 +29,8 @@
           <li><a href="#">Group 1</a></li>
           <li><a href="#">Group 2</a></li>
           <li><a href="#">Group 3</a></li>
+          <li><a href="#">Group 4</a></li>
+          <li><a href="#">Group 5</a></li>
         </ul>
       </li>
       <li><a href="#">Folders</a></li>

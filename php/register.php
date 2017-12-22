@@ -12,15 +12,10 @@ $enroll = test_input($_POST["enroll"]);
 $pass = test_input($_POST["password"]);
 $lname=test_input($_POST["lname"]);
 $course1 = test_input($_POST["course1"]);
-$p1 = test_input($_POST["p1"]);
 $course2=test_input($_POST["course2"]);
-$p2=test_input($_POST["p2"]);
 $course3=test_input($_POST["course3"]);
-$p3=test_input($_POST["p3"]);
 $course4=test_input($_POST["course4"]);
-$p4=test_input($_POST["p4"]);
 $course5=test_input($_POST["course5"]);
-$p5=test_input($_POST["p5"]);
 
 //storing data
 $servername = "localhost";
@@ -34,22 +29,30 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());}
 
-$sql = "INSERT INTO info(Fname, Lname, Branch, Email, Enrollno , password,course1 ,proff1 ,course2 ,proff2 ,course3 ,proff3 ,course4 ,proff4 ,course5 ,proff5)
-VALUES ('$fname','$lname','$branch','$email','$enroll','$pass','$course1','$p1','$course2','$p2','$course3','$p3','$course4','$p4','$course5','$p5')";
+$sql = "INSERT INTO info(Fname, Lname, Branch, Email, Enrollno , password,course1 ,course2 ,course3 ,course4 ,course5)
+VALUES ('$fname','$lname','$branch','$email','$enroll','$pass','$course1','$course2','$course3','$course4','$course5')";
 $sql2 = "INSERT INTO login(enroll , passwd) VALUES ('$enroll','$pass')";
+$sql3="INSERT INTO `$branch`(Enrollno,course1,course2,course3,course4,course5) VALUES ('$enroll','$course1','$course2','$course3','$course4','$course5')";
+$sql4 = "INSERT INTO "
 if (mysqli_query($conn, $sql)) {
-    echo "You are registered successfully";
+    echo "connected 1";
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    echo "register again";
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    echo "try again";
+}
+if (mysqli_query($conn, $sql2)) {
+    echo "connected 2";
+} else {
+        echo "Error: " . $sql2 . "<br>" . mysqli_error($conn);
+    echo "try again";
+}
+if (mysqli_query($conn, $sql3)) {
+    echo "connected 3";
+} else {
+    echo "Error: " . $sql3 . "<br>" . mysqli_error($conn);
+    echo "try again";
 }
 
-if (mysqli_query($conn, $sql2)) {
-    echo "You are kjhkj successfully";
-} else {
-    echo "Error: " . $sql2 . "<br>" . mysqli_error($conn);
-    echo "hgnk again";
-}
 mysqli_close($conn);
 
 ?>
