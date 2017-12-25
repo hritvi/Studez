@@ -74,11 +74,38 @@ Studez
     Next<span class="glyphicon glyphicon-chevron-right"></span></button></a></center>
 	</div>
 	<div id="Step2" class="tab-pane fade">
-		<input type=text placeholder="Enter Course Name*" name="course1" class="form-control"  required><br>
-		<input type=text placeholder="Enter Course Name" name="course2" class="form-control"><br>
-		<input type=text placeholder="Enter Course Name" name="course3" class="form-control"><br>
-		<input type=text placeholder="Enter Course Name" name="course4" class="form-control"><br>
-		<input type=text placeholder="Enter Course Name" name="course5" class="form-control"><br>
+		<select name="course1" class="form-control"><br>
+      <option disabled selected>Enter Course Code</option>
+      <option>PHN-004</option>
+      <option>PHN-006</option>
+    </select><br>
+    <select name="course2" class="form-control"><br>
+      <option disabled selected>Enter Course Code</option>
+      <option>MAN-002</option>
+      <option>MAN-010</option>
+    </select><br>
+    <select name="course3" class="form-control"><br>
+      <option disabled selected>Enter Course Code</option>
+      <option>CSN-106</option>
+      <option>ECN-142</option>
+      <option>EEN-102</option>
+    </select><br>
+    <select name="course4" class="form-control"><br>
+      <option disabled selected>Enter Course Code</option>
+      <option>CSN-102</option>
+      <option>EEN-104</option>
+    </select><br>
+    <select name="course5" class="form-control"><br>
+      <option disabled selected>Enter Course Code</option>
+      <option>ECN-104</option>
+      <option>EEN-106</option>
+    </select><br>
+    <select name="course6" class="form-control"><br>
+      <option disabled selected>Enter Course Code</option>
+      <option>MIN-106</option>
+      <option>ECN-102</option>
+      <option>EEN-112</option>
+    </select><br>
 		<center><a data-toggle="tab" href="#Step1"><button class="btn btn-primary">
     <span class="glyphicon glyphicon-chevron-left"></span>Previous</button></a>
    <button class="btn btn-success">Submit</button></center>
@@ -98,6 +125,31 @@ Studez
     }
     next.addEventListener('click', change);
 
+    // Dropdown
+function dropFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+// Filter
+function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDIV");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
+}
 </script>
 </body>
 </html>
