@@ -1,3 +1,6 @@
+<?php
+   include('session.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +40,7 @@
       <li><a href="#">Files</a></li>
     </ul>
     <div class="navbar-form navbar-right">
-     <span class="wel">Welcome </span>
+     <span class="wel">Welcome <?php echo $_SESSION["name"]; ?> </span>
       <span class="dropdown">
   		<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
   		<span class="glyphicon glyphicon-plus"></span></button>
@@ -45,7 +48,6 @@
     	<li><a href="#">Add a group</a></li>
     	<li><a href="#">Add a folder</a></li>
     	<li><a href="#">Add a file</a></li>
-    	<hr>
     	<li><a href="">Get Shareable link</a></li>
 	  	</ul>
 	  </span>
@@ -58,11 +60,14 @@
     	<li><a href="#">jhj</a></li>
 	  	</ul>
 	  </span>
-      <button class="btn btn-danger"><span class="glyphicon glyphicon-off"></span></button>
+      <a href="logout.php"><button class="btn btn-danger"><span class="glyphicon glyphicon-log-out"></span></button></a>
     </div>
     </div>
   </div>
 </nav>
+<br><br><br>
+<div class="center"> Your Groups </div>
+
 </body>
 </head>
 </html>

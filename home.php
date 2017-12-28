@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
    define('DB_SERVER', 'localhost');
    define('DB_USERNAME', 'root');
    define('DB_PASSWORD', 'Samdar');
@@ -9,10 +12,11 @@
       $myusername = mysqli_real_escape_string($db,$_POST['usr']);
       $mypassword = mysqli_real_escape_string($db,$_POST['pwd']); 
       
-      $sql = "SELECT * FROM login WHERE enroll = '$myusername' and passwd = '$mypassword'";
+      $sql = "SELECT * FROM info WHERE Enrollno = '$myusername' and password = '$mypassword'";
       $result = mysqli_query($db,$sql);
       $count = mysqli_num_rows($result);
       if($count == 1) {
+         $_SESSION["name"] = $myusername;
          header("location: php/homein.php");
       }else {
          $error="Invalid username or password";
@@ -58,8 +62,8 @@
 
 <!--First Parallax-->
 <div class="bgimg-1" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-		Studez....Making study easier!!
+  <div class="w3-display-middle center" style="white-space:nowrap;">
+		Studez <br> Making study easier!!
   </div>
 </div>
 
@@ -78,10 +82,10 @@
 <div class="block">
 <h3 class="center">Here are some of the running groups</h3>
 <div class="center">
-<img src="images/g1.jpg" class="grps" alt="Electrodynamiocs and Optics" title="Electrodynamiocs and Optics">
-<img src="images/g2.jpeg" class="grps" alt="Mathematics" title="Mathematics">
-<img src="images/g3.jpg" class="grps" alt="Introduction to Electrical Engineering" title="Introduction to Electrical Engineering">
-<img src="images/g4.jpg" class="grps" alt="Introduction to Object Oriented Programming-Java" title="Introduction to Object Oriented Programming-Java">
+<img src="images/g1.jpg" class="grps" alt="Mathematical Methods" title="Mathematical Methods">
+<img src="images/g3.jpg" class="grps" alt="Fundamental of Electronics" title="Fundamental of Electronics">
+<img src="images/g2.JPG" class="grps" alt="Quantum Mechanics and Statistical Mechanics" title="Quantum Mechanics and Statistical Mechanics">
+<img src="images/g4.jpg" class="grps" alt="Electrical Measurement and Measuring Instruments" title="Electrical Measurement and Measuring Instruments">
 </div>
 </div>
 <!-- Third Parallax Image-->

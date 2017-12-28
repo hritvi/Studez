@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
 function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
@@ -42,6 +45,7 @@ $sql8="INSERT INTO `$course5`(enrollno) VALUES ('$enroll')";
 $sql9="INSERT INTO `$course6`(enrollno) VALUES ('$enroll')";
 $error="";
 if (mysqli_query($conn, $sql)) {
+    $_SESSION["name"] = $enroll;
     header("location:homein.php");
 } else {
     $error="There is some problem in data. \n This may be due to incorrect enrollment number or you may have already registered. ";

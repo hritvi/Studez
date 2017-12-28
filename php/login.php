@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
    define('DB_SERVER', 'localhost');
    define('DB_USERNAME', 'root');
    define('DB_PASSWORD', 'Samdar');
@@ -9,10 +12,11 @@
       $myusername = mysqli_real_escape_string($db,$_POST['usr']);
       $mypassword = mysqli_real_escape_string($db,$_POST['pwd']); 
       
-      $sql = "SELECT * FROM login WHERE enroll = '$myusername' and passwd = '$mypassword'";
+      $sql = "SELECT * FROM info WHERE Enrollno = '$myusername' and password = '$mypassword'";
       $result = mysqli_query($db,$sql);
       $count = mysqli_num_rows($result);
       if($count == 1) {
+         $_SESSION["name"] = $myusername;
          header("location:homein.php");
       }else {
          $error="Invalid username or password";
