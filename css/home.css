@@ -102,3 +102,20 @@ body, html {
 .about{
 	padding: 0 7vw;
 }
+.myiframe{
+    height: 250px;
+    width:250px;
+}
+.group{
+    font-size: 30px;
+}
+.add{
+    float:right;
+}
+.display-groups{
+    height: 20vh;
+    width: 15vw;
+    background-color: pink;
+    margin:1vh 2vw;
+    padding: 30px;
+}

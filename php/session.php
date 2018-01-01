@@ -17,4 +17,22 @@
    if(!isset($_SESSION["name"])){
       header("location:login.php");
    }
+
+   if (!$db) {
+    die("Connection failed: " . mysqli_connect_error());}
+    $sql="SELECT * FROM info WHERE Enrollno = '$user_check' ";
+    $result = $db->query($sql);
+    if ($result->num_rows > 0) {
+    while($rows = $result->fetch_assoc()) {
+        $g1 = $rows["course1"];
+        $g2 = $rows["course2"];
+        $g3 = $rows["course3"];
+        $g4 = $rows["course4"];
+        $g5 = $rows["course5"];
+        $g6 = $rows["course6"];
+    }
+  } 
+  else {
+    echo "0 results";
+}
 ?>

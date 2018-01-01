@@ -29,14 +29,14 @@
       <li class="active"><a href="#">Home</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> Group <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Group 1</a></li>
-          <li><a href="#">Group 2</a></li>
-          <li><a href="#">Group 3</a></li>
-          <li><a href="#">Group 4</a></li>
-          <li><a href="#">Group 5</a></li>
+          <li><a href="<?php echo 'groups/'.$g1.'.php'; ?>"><?php echo $g1; ?></a></li>
+          <li><a href="<?php echo 'groups/'.$g2.'.php'; ?>"><?php echo $g2; ?></a></li>
+          <li><a href="<?php echo 'groups/'.$g3.'.php'; ?>"><?php echo $g3; ?></a></li>
+          <li><a href="<?php echo 'groups/'.$g4.'.php'; ?>"><?php echo $g4; ?></a></li>
+          <li><a href="<?php echo 'groups/'.$g5.'.php'; ?>"><?php echo $g5; ?></a></li>
+          <li><a href="<?php echo 'groups/'.$g6.'.php'; ?>"><?php echo $g6; ?></a></li>
         </ul>
       </li>
-      <li><a href="#">Folders</a></li>
       <li><a href="#">Files</a></li>
     </ul>
     <div class="navbar-form navbar-right">
@@ -46,8 +46,7 @@
   		<span class="glyphicon glyphicon-plus"></span></button>
   		<ul class="dropdown-menu">
     	<li><a href="#">Add a group</a></li>
-    	<li><a href="#">Add a folder</a></li>
-    	<li><a href="#">Add a file</a></li>
+    	<li><a href="uploads.php">Add a file</a></li>
     	<li><a href="">Get Shareable link</a></li>
 	  	</ul>
 	  </span>
@@ -66,8 +65,41 @@
   </div>
 </nav>
 <br><br><br>
-<div class="center"> Your Groups </div>
-
+<span class="group"> Your Groups </span><span class="add"><button class="btn btn-primary">Add Group</button><button class="btn btn-danger">Remove from a group</button></span><hr width="1px">
+<div>
+  <a href="<?php echo 'groups/'.$g1.'.php'; ?>">
+    <span class="display-groups">
+      <?php echo $g1; ?>
+    </span>
+  </a>
+  <a href="<?php echo 'groups/'.$g2.'.php'; ?>">
+    <span class="display-groups">
+      <?php echo $g2; ?>
+    </span>
+  </a>
+  <a href="<?php echo 'groups/'.$g3.'.php'; ?>">
+    <span class="display-groups">
+      <?php echo $g3; ?>
+    </span>
+  </a>
+  <a href="<?php echo 'groups/'.$g4.'.php'; ?>">
+    <span class="display-groups">
+      <?php echo $g4; ?>
+    </span>
+  </a>
+  <a href="<?php echo 'groups/'.$g5.'.php'; ?>">
+    <span class="display-groups">
+      <?php echo $g5; ?>
+    </span>
+  </a>
+  <a href="<?php echo 'groups/'.$g6.'.php'; ?>">
+    <span class="display-groups">
+      <?php echo $g6; ?>
+    </span>
+  </a>
+</div>
+<br><hr width="500px">
+<span class="group"> Your Files </span><span class="add"><button class="btn btn-primary">Add a file</button><button class="btn btn-danger">Remove from a group</button></span><hr width="1px">
 </body>
 </head>
 </html>
