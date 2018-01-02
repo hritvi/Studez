@@ -37,7 +37,7 @@
           <li><a href="<?php echo 'groups/'.$g6.'.php'; ?>"><?php echo $g6; ?></a></li>
         </ul>
       </li>
-      <li><a href="#">Files</a></li>
+      <li><a href="#myfiles">Files</a></li>
     </ul>
     <div class="navbar-form navbar-right">
      <span class="wel">Welcome <?php echo $_SESSION["name"]; ?> </span>
@@ -47,7 +47,6 @@
   		<ul class="dropdown-menu">
     	<li><a href="#">Add a group</a></li>
     	<li><a href="uploads.php">Add a file</a></li>
-    	<li><a href="">Get Shareable link</a></li>
 	  	</ul>
 	  </span>
       <span class="dropdown">
@@ -55,8 +54,8 @@
   		<span class="glyphicon glyphicon-cog"></span></button>
   		<ul class="dropdown-menu">
     	<li><a href="#">Your Profile</a></li>
-    	<li><a href="#">ffk</a></li>
-    	<li><a href="#">jhj</a></li>
+    	<li><a href="#">lorem ipsum</a></li>
+    	<li><a href="#">lorem ipsum</a></li>
 	  	</ul>
 	  </span>
       <a href="logout.php"><button class="btn btn-danger"><span class="glyphicon glyphicon-log-out"></span></button></a>
@@ -99,7 +98,34 @@
   </a>
 </div>
 <br><hr width="500px">
-<span class="group"> Your Files </span><span class="add"><button class="btn btn-primary">Add a file</button><button class="btn btn-danger">Remove from a group</button></span><hr width="1px">
+<div id="myfiles">
+<span class="group"> Your Files </span><span class="add"><a href="uploads.php"><button class="btn btn-primary">Add a file</button></a><button class="btn btn-danger">Remove from a group</button></span><hr width="1px">
+<?php
+$s=" SELECT files FROM `$_SESSION[name]` ";
+    $result1 = $db->query($s);
+    if ($result1->num_rows > 0) {
+    // output data of each row
+    while($row2 = $result1->fetch_assoc()) {
+        $file = $row2["files"];
+        if($file==' ') continue;
+?>
+
+      <span class="file"> 
+        <iframe class= "frame" src="<?php echo '../uploads/'.$file ; ?>"></iframe>
+            <div class=middle>
+              <a href="<?php echo '../uploads/'.$file ; ?>" download><button class="btn btn-primary">
+              <?php echo $file ; ?> <span class="glyphicon glyphicon-download-alt"></span>
+              </button></a>
+            </div>
+      </span>
+<?php 
+    }
+  } 
+  else {
+    echo "0 results";
+}
+?>
+</div>
 </body>
 </head>
 </html>

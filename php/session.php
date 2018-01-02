@@ -32,7 +32,5 @@
         $g6 = $rows["course6"];
     }
   } 
-  else {
-    echo "0 results";
-}
+
 ?>

@@ -1,0 +1,66 @@
+<div class="pre center">
+<span class="box box1"></span>
+<span class="box box2"></span>
+<span class="box box3"></span>
+<span class="box box4"></span>
+</div>
+<style type="text/css">
+.center{
+	text-align: center;
+	justify-content: center;
+}
+.pre{
+	padding:100px;
+	position: absolute;
+	margin:auto;
+
+}
+.box{
+	height: 100px;
+	width:100px;
+	display:inline-block;
+	position: absolute;
+	align-items:center;
+	margin:auto;
+}
+.box1{
+	background-color: yellow;
+  	animation:box-1 4s infinite linear;
+}
+.box2{
+	background-color: pink;
+  	animation:box-2 4s infinite linear;
+}
+.box3{
+	background-color: aqua;
+  	animation:box-3 4s infinite linear;
+}
+.box4{
+	background-color: lime;
+	animation:box-4 4s infinite linear;
+}
+@keyframes box-1{
+	0%,100%{transform: translate(0,0);}
+	25%{transform: translate(0,100px);}
+	50%{transform: translate(100px,100px);}
+	75%{transform: translate(100px,0);}
+}
+@keyframes box-2{
+	0%,100%{transform: translate(0,0);}
+	25%{transform: translate(-100px,0);}
+	50%{transform: translate(-100px,100px);}
+	75%{transform: translate(0,100px);}
+}
+@keyframes box-3{
+	0%,100%{transform: translate(0,0);}
+	25%{transform: translate(0,-100px);}
+	50%{transform: translate(-100px,-100px);}
+	75%{transform: translate(-100px,0);}
+}
+@keyframes box-4{
+	0%,100%{transform: translate(0,0);}
+	25%{transform: translate(100px,0);}
+	50%{transform: translate(100px,-100px);}
+	75%{transform: translate(0,-100px);}
+}	
+</style>

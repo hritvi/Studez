@@ -32,18 +32,23 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());}
-
+$s="CREATE TABLE `$enroll` ( files VARCHAR (100) , enrollno INT (11) ) ";
 $sql = "INSERT INTO info(Fname, Lname, Branch, Email, Enrollno , password,course1 ,course2 ,course3 ,course4 ,course5 ,course6)
 VALUES ('$fname','$lname','$branch','$email','$enroll','$pass','$course1','$course2','$course3','$course4','$course5','$course6')";
 $sql2 = "INSERT INTO login(enroll , passwd) VALUES ('$enroll','$pass')";
-$sql3="INSERT INTO `$branch`(Enrollno,course1,course2,course3,course4,course5,course6) VALUES ('$enroll','$course1','$course2','$course3','$course4','$course5','$course6')";
-$sql4="INSERT INTO `$course1`(enrollno) VALUES ('$enroll')";
-$sql5="INSERT INTO `$course2`(enrollno) VALUES ('$enroll')";
-$sql6="INSERT INTO `$course3`(enrollno) VALUES ('$enroll')";
-$sql7="INSERT INTO `$course4`(enrollno) VALUES ('$enroll')";
-$sql8="INSERT INTO `$course5`(enrollno) VALUES ('$enroll')";
-$sql9="INSERT INTO `$course6`(enrollno) VALUES ('$enroll')";
+$sql3=" INSERT INTO `$branch`(Enrollno,course1,course2,course3,course4,course5,course6) VALUES ('$enroll','$course1','$course2','$course3','$course4','$course5','$course6')";
+$sql4="INSERT INTO `$course1`(files , enrollno) VALUES (' ' ,'$enroll')";
+$sql5="INSERT INTO `$course2`(files , enrollno) VALUES (' ' ,'$enroll')";
+$sql6="INSERT INTO `$course3`(files , enrollno) VALUES (' ' ,'$enroll')";
+$sql7="INSERT INTO `$course4`(files , enrollno) VALUES (' ' ,'$enroll')";
+$sql8="INSERT INTO `$course5`(files , enrollno) VALUES (' ' ,'$enroll')";
+$sql9="INSERT INTO `$course6`(files , enrollno) VALUES (' ' ,'$enroll')";
 $error="";
+if (mysqli_query($conn, $s)) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . mysqli_error($conn);
+}
 if (mysqli_query($conn, $sql)) {
     $_SESSION["name"] = $enroll;
     header("location:homein.php");

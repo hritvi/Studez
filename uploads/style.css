@@ -1,0 +1,24 @@
+.head{
+	text-transform: uppercase;
+	position: fixed;
+}
+.nav{
+	display: inline;
+}
+.nav a{
+	margin:0;
+	padding: 10px;
+	display: inline;
+	background-color: #6C94B2;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+}
+.nav a:hover{
+	background-color: #8EA1CD;
+}
+.home{
+	text-align:center;
+	font-family: 'jokerman','sans-serif';
+	background
+}
