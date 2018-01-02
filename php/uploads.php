@@ -15,23 +15,30 @@
       $exploded = explode('.',$_FILES['Filedata']['name']);
       $file_ext=strtolower(end($exploded));
       $tablename=$_POST["group"];
+      $filename= "../uploads/".$file_name;
       if($file_size < 300097152){
+         
+         if(file_exists($filename)){ echo "File name already exists. Please rename your file and then upload.";}
+         else{
          move_uploaded_file($file_tmp,"../uploads/".$file_name);
          echo "Success";
+         if (!$db) {
+            die("Connection failed: " . mysqli_connect_error());}
+         $sql="INSERT INTO `$tablename`(enrollno , files) VALUES ('0' , '$file_name')";
+         if (mysqli_query($db, $sql)) {
+            echo "File uploaded successfully";
+         } 
+         else {
+            echo "Error: " . $sql . "<br>" . $db->error;;
+         }
+         }
+
       }
       else{
          echo "file size not accepted";
       }
 // Check connection
-   if (!$db) {
-    die("Connection failed: " . mysqli_connect_error());}
-   $sql="INSERT INTO `$tablename`(enrollno , files) VALUES ('0' , '$file_name')";
-   if (mysqli_query($db, $sql)) {
-    echo "File uploaded successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $db->error;;
 }
- }
 ?>
 <html>
    <head>
