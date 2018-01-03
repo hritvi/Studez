@@ -98,9 +98,11 @@
     </div>
   </div>
 </nav>
-      <form action="" method="POST" enctype="multipart/form-data">
-         <input type="file" name="Filedata" />
-         <select name="group" required>
+<center>
+   <h2 class="hbh">Select files to upload either privately or in a group of students sharing the same course</h2>
+      <h3><form action="" method="POST" enctype="multipart/form-data">
+         <input type="file" name="Filedata" /><br>
+         <select name="group" required >
             <option selected disabled>Select the mode</option>
             <option><?php echo $g1; ?></option>
             <option><?php echo $g2; ?></option>
@@ -109,9 +111,10 @@
             <option><?php echo $g5; ?></option>
             <option><?php echo $g6; ?></option>
             <option value="<?php echo $user_check ; ?>">Save privately</option>
-         </select>
-         <input type="submit"/>
-      </form>
-      
+         </select><br><br>
+         <input type="submit" value="Upload" />
+      </form></h3><br>
+      <h4 class="hbh">*Files can be uploaded in any format but file size should be less than 250 MB </h4>
+</center>    
    </body>
 </html>

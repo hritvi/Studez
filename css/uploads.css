@@ -1,7 +1,15 @@
+body{
+	background-color: #bfbfbf;
+}
 .wel{
 	padding-right: 2vw;
 	color: white;
 }
 .text{
 	color:white;
+}
+.hbh{
+	color:#330000;
+	text-decoration: bold;
+	size: 50px;
 }
